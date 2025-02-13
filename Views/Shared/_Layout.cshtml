@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BidwotaGiri_Dot_Net_Assignment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BidwotaGiri_Dot_Net_Assignment.styles.css" asp-append-version="true" />
+    <style>
+        .btn-primary {
+                 background-color: #8B5DFF !important;
+            border-color: #8B5DFF !important;
+          
+        }
+
+        .bg-primary {
+            background-color: #8B5DFF !important;
+            border-color: #8B5DFF !important;
+        }
+
+        .bg-primary-1 {
+            background-color: #500073 !important;
+            border-color: #500073 !important;
+        }
+
+        .text-primary{
+            color: #8B5DFF !important;
+        }
+
+        .btn-outline-primary{
+            background-color: #8B5DFF !important;
+            border-color: #8B5DFF !important;
+            color:white;
+        }
+
+            .btn-outline-primary:hover,
+            .btn-outline-primary:focus {
+                background-color: white !important;
+                color: #500073 !important;
+                border-color: #500073 !important;
+            }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-white" href="@Url.Action("Index", "Home")">
+                    Event Management
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+           
+                  <partial name="_LoginPartial.cshtml"/>   
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container"> 
+           &copy; 2025 - BidwotaGiri_Dot_Net_Assignment - <a class="text-primary" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> 
+         </div> 
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

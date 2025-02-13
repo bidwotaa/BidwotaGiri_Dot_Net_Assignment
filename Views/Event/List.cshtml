@@ -1,0 +1,92 @@
+﻿
+@model List<BidwotaGiri_Dot_Net_Assignment.Models.Entities.EventsList>
+
+@{
+    ViewData["Title"] = "View Events";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">Event List</h2>
+
+    <form method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="searchTerm" value="@ViewBag.SearchTerm" class="form-control" placeholder="Search events...">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="@Url.Action("List", "Event")" class="btn btn-dark">Reset</a>
+        </div>
+    </form>
+
+    <div class="mb-3">
+        <a class="btn btn-outline-primary" asp-action="List" asp-route-sortOrder="@ViewBag.NameSortParam" asp-route-searchTerm="@ViewBag.SearchTerm">Sort by Name</a>
+        <a class="btn btn-outline-primary" asp-action="List" asp-route-sortOrder="@ViewBag.DateSortParam" asp-route-searchTerm="@ViewBag.SearchTerm">Sort by Date</a>
+    </div>
+
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-primary">
+            <tr>
+                <th>#</th>
+                <th>Event Name</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                int count = ((ViewBag.CurrentPage - 1) * 5) + 1;
+                @foreach (var eventItem in Model)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@eventItem.EventName</td>
+                        <td>@eventItem.Description</td>
+                        <td>@eventItem.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@eventItem.Location</td>
+                        <td>
+                            <a class="btn btn-dark btn-sm" asp-controller="Event" asp-action="Edit" asp-route-id="@eventItem.Id">View</a>
+                            <a class="btn btn-primary btn-sm" asp-controller="Event" asp-action="Edit" asp-route-id="@eventItem.Id">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-controller="Event" asp-action="Edit" asp-route-id="@eventItem.Id">Delete</a>
+
+
+                        </td>
+                    </tr>
+                    count++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center text-muted">No events available.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav>
+        <ul class="pagination justify-content-center">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link text-primary" asp-action="List" asp-route-pageNumber="@(ViewBag.CurrentPage - 1)" asp-route-searchTerm="@ViewBag.SearchTerm" asp-route-sortOrder="@ViewBag.SortOrder">Previous</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link  @(i == ViewBag.CurrentPage ? "active bg-primary text-white" : "")" asp-action="List" asp-route-pageNumber="@i" asp-route-searchTerm="@ViewBag.SearchTerm" asp-route-sortOrder="@ViewBag.SortOrder">@i</a>
+                </li>
+            }
+
+
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link text-primary" asp-action="List" asp-route-pageNumber="@(ViewBag.CurrentPage + 1)" asp-route-searchTerm="@ViewBag.SearchTerm" asp-route-sortOrder="@ViewBag.SortOrder">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

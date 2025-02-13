@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+
+namespace BidwotaGiri_Dot_Net_Assignment.Areas.Identity.Data;
+
+// Add profile data for application users by adding properties to the BidwotaGiri_Dot_Net_AssignmentUser class
+public class BidwotaGiri_Dot_Net_AssignmentUser : IdentityUser
+{
+
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+}
+

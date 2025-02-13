@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Add Event";
+
+}
+
+@model BidwotaGiri_Dot_Net_Assignment.Models.AddEventViewModel;
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg rounded-4 border-0">
+                <div class="card-body p-4 bg-light ">
+                    <h3 class="text-center mb-4 text-primary">Add Event</h3>
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="eventName" class="form-label text-secondary">Event Name</label>
+                            <input type="text" class="form-control form-control-lg border-primary" id="eventName" placeholder="Enter event name"  asp-for="EventName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventDate" class="form-label text-secondary">Event Date</label>
+                            <input type="date" class="form-control form-control-lg border-primary" id="eventDate" asp-for="StartDate" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventLocation" class="form-label text-secondary">Event Location</label>
+                            <input type="text" class="form-control form-control-lg border-primary" id="eventLocation" placeholder="Enter event location" asp-for="Location" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="eventDescription" class="form-label text-secondary">Event Description</label>
+                            <textarea class="form-control form-control-lg border-primary" id="eventDescription" rows="3" placeholder="Enter event description" asp-for="Description" required></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg shadow-sm">Add Event</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
