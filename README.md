@@ -12,7 +12,7 @@
 ![Screenshot 2025-02-13 214528](https://github.com/user-attachments/assets/0cd96569-d0ed-4815-bea5-1d613e4942f4)
 ### **Search Events**: Search Events and Sort Events.
 ![Screenshot 2025-02-13 214551](https://github.com/user-attachments/assets/d4c4db4a-4340-48b6-8c55-ae0d3447056d)
-### **Pagination**: All User To use Pagination .
+### **Pagination**: Allows User To use Pagination .
 ![Screenshot 2025-02-13 214715](https://github.com/user-attachments/assets/abc17965-0f95-4915-92e4-1c2f2588c11c)
 ### **Delete And Update **: Allows users to delete and update events.
 ![Screenshot 2025-02-13 214733](https://github.com/user-attachments/assets/6f35b58b-2bda-4591-aca7-d9e3854c910b)
