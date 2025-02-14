@@ -1,3 +1,4 @@
+The Event Management System is a .NET Core MVC web application with ASP.NET Core Identity for authentication and authorization. It supports CRUD operations, pagination, sorting, and searching, following a code-first approach with Entity Framework Core and SQL Server for data management.
 ## Views
 ### **Login**: Allows users to log in to the system.
 ![Screenshot 2025-02-13 213513](https://github.com/user-attachments/assets/523faef1-e324-4a6d-ae4e-cc4b355a9362)
